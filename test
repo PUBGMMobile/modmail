@@ -1,0 +1,14 @@
+const Discord = require('discord.js');
+
+exports.run = (client, message, args) => {
+  let embed = new Discord.RichEmbed() 
+   .setColor("BLUE")
+   .setAuthor("Mirage Command list",client.user.avatarURL)
+   .addField (".level", "**Description:** Displays your current level with an intuitive layout.\n**Aliases:** `.rank`, `.levels`")
+   .addField(".leaderboard","**Description:** Displays the top 10 most active users in the server!\n**Aliases:** `.lb`")
+   .addField(".leaderboard {number}","**Description:** Displays people from top 20 `.lb 2` until top 100 `.lb 10`\n**Aliases:** `.lb 2` for top 20, `.lb 3` for top 30, etc")
+   .setThumbnail(message.guild.iconURL)
+   .setTimestamp(message.createdAt)
+   .setFooter(message.guild.name,message.guild.iconURL)
+ message.author.sendMessage(embed) 
+}
